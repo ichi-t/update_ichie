@@ -23,7 +23,7 @@ end
 
 # client = TweetStream::Client.new.follow('185792744') do |status|
 client = TweetStream::Client.new.userstream do |status|
-  p status.text
+  puts status.text
   text = status.text
 
   if text.start_with? "RT","@","＠"
@@ -37,7 +37,7 @@ client = TweetStream::Client.new.userstream do |status|
     p "next"
     next
   elsif text.end_with? "っちー"
-    p "mutch"
+    p "match"
     # newname = text.gsub(/っちー/)
 
     if text.length > 12 || status.user.screen_name == "Thunder_Pudding"
