@@ -40,7 +40,7 @@ client = TweetStream::Client.new.userstream do |status|
     p "match"
     # newname = text.gsub(/っちー/)
 
-    if text.length > 12 || status.user.screen_name == "Thunder_Pudding" || "fkuuuuun"
+    if text.length > 12 || status.user.screen_name == "Thunder_Pudding" || status.user.screen_name == "fkuuuuun"
       p "!nagai"
       tweet = "@#{status.user.screen_name} お、そうだな"
       restclient.update(tweet, :in_reply_to_status_id => status.id)
